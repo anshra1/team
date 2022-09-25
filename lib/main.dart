@@ -1,6 +1,7 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
+import 'package:team_colab/ansh_workspace.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Project repo Url
@@ -67,16 +68,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }),
             ListTile(
-                title: const Text("2nd_name_work",
+                title: const Text("Ansh Workspace",
                     style: TextStyle(fontWeight: FontWeight.w600)),
                 onTap: () {
-                  Navigator.pop(context);
-                  const snackBar = SnackBar(
-                    content: Text("Make your work page by creating a branch !"),
-                    action: SnackBarAction(
-                        label: 'Create now', onPressed: _launchUrl),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AnshWorkSpace()),
                   );
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }),
             ListTile(
                 title: const Text("3rd_name_work",
